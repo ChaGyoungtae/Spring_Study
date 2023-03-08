@@ -1,7 +1,9 @@
 package org.hdcd.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import lombok.extern.slf4j.Slf4j;
@@ -11,23 +13,50 @@ import lombok.extern.slf4j.Slf4j;
 @RequestMapping("/board")
 public class BoardController {
 		
-	@RequestMapping(value="/register")
-	public void registerForm() {
-		log.info("modifyForm");
+	@GetMapping("/register")
+	public String registerForm() {
+		log.info("registerForm");
+		
+		return "success";
 	}
 	
-	@RequestMapping(value="/modify")
-	public void modifyForm() {
-		log.info("modifyForm");
+	@PostMapping("/register")
+	public String register() {
+		log.info("register");
+		
+		return "success";
 	}
 	
-	@RequestMapping("/list")
-	public void list() {
+	@GetMapping("/modify")
+	public String modifyForm() {
+		log.info("modifyForm");
+		
+		return "success";
+	}
+	
+	@PostMapping("/modify")
+	public String modify() {
+		log.info("modify");
+		
+		return "success";
+	}
+	
+	@PostMapping("/remove")
+	public String remove() {
+		log.info("remove");
+		
+		return "success";
+	}
+	
+	@GetMapping("/list")
+	public String list() {
 		log.info("list");
+		
+		return "success";
 	}
 	
-	@RequestMapping("/read/{boardNo}")
-	public String read(@PathVariable int boardNo) {
+	@RequestMapping("/read/{no}")
+	public String read(@PathVariable("no") int boardNo) {
 		log.info("read boardNo :" + boardNo);
 		
 		return "board/read";

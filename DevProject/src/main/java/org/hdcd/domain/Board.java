@@ -3,6 +3,8 @@ package org.hdcd.domain;
 import java.time.LocalDateTime;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -18,6 +20,8 @@ import lombok.ToString;
 @EqualsAndHashCode(of="boardNo")
 @ToString
 @AllArgsConstructor
+@Data
+@Builder
 public class Board {
 	
 	@NonNull
